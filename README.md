@@ -1,6 +1,8 @@
 # Codex MCP Guard
 
-[![Tests](https://github.com/XJM-free/codex-mcp-guard/actions/workflows/tests.yml/badge.svg)](https://github.com/XJM-free/codex-mcp-guard/actions/workflows/tests.yml)
+<img src="https://raw.githubusercontent.com/zemixo/codex-mcp-guard/main/quiet-orbit-banner.svg" alt="MCP Guard: Observe first. Keep the evidence. Zemixo pixel robot workshop." width="100%">
+
+[![Tests](https://github.com/zemixo/codex-mcp-guard/actions/workflows/tests.yml/badge.svg)](https://github.com/zemixo/codex-mcp-guard/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 > **Alpha safety boundary:** `v0.1.0-alpha.2` is audit-only. It never sends a
@@ -14,6 +16,10 @@ It investigates the retained-runtime window discussed in
 [openai/codex#17574](https://github.com/openai/codex/issues/17574). Upstream has
 already added shutdown, resident-agent LRU, and process-tree cleanup improvements,
 so this project does not claim that every current Codex build leaks indefinitely.
+
+[Install](#install) · [Diagnose](#diagnose) · [Evidence model](#evidence-model) · [Privacy](#local-data-and-privacy)
+
+---
 
 ## Why it observes instead of killing
 
@@ -72,7 +78,7 @@ process is not an observed Codex/MCP candidate.
 Python 3.10 or newer is required. Install the published plugin:
 
 ```bash
-codex plugin marketplace add XJM-free/codex-mcp-guard --ref v0.1.0-alpha.2
+codex plugin marketplace add zemixo/codex-mcp-guard --ref v0.1.0-alpha.2
 codex plugin add codex-mcp-guard@xjm-free
 ```
 
@@ -89,7 +95,7 @@ installing Alpha 2:
 ```bash
 codex plugin remove codex-mcp-guard@xjm-free
 codex plugin marketplace remove xjm-free
-codex plugin marketplace add XJM-free/codex-mcp-guard --ref v0.1.0-alpha.2
+codex plugin marketplace add zemixo/codex-mcp-guard --ref v0.1.0-alpha.2
 codex plugin add codex-mcp-guard@xjm-free
 ```
 
@@ -122,7 +128,7 @@ install user Hooks while `codex-mcp-guard@xjm-free` is enabled; Codex runs match
 Hooks from both sources.
 
 ```bash
-git clone https://github.com/XJM-free/codex-mcp-guard.git
+git clone https://github.com/zemixo/codex-mcp-guard.git
 cd codex-mcp-guard
 
 python3 scripts/install-user-hooks.py --dry-run
@@ -197,3 +203,7 @@ python3 -m build
 Read [SECURITY.md](SECURITY.md) before reporting an attribution bypass or local data
 exposure. Codex is a product of OpenAI. This independent project is not affiliated
 with or endorsed by OpenAI.
+
+---
+
+<sub>Made by [Zemixo](https://github.com/zemixo) · Small tools. Made with care.</sub>
